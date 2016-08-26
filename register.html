@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+<!-- Load jQuery and the validate plugin -->
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+  
+<script>
+  
+  // When the browser is ready...
+  $(document).ready(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#theform").validate({
+    
+        // Specify the validation rules
+        rules: {
+            first: "required",
+            last: "required",
+            email: {
+                required: true,
+                email: true
+                     },
+            password: {
+                required: true,
+                maxlength: 6
+                   },
+            dob: { 
+                required:true,
+                },
+            email: { 
+                required:true,
+                },
+            sex: { 
+                required:true,
+                },
+address:{ 
+                required:true,
+                },
+city: { 
+                required:true,
+                },
+state: { 
+                required:true,
+                },
+pincode: { 
+                required:true,
+                },
+phone: { 
+                required:true,
+                },
+group: { 
+                required:true,
+                },
+
+             
+        
+        // Specify the validation error messages
+        messages: {
+            first: "Please enter your first name",
+            last: "Please enter your last name",
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            email: "Please enter a valid email address",
+                    },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+  
+  </script>
+<style> 
+	#bod{ background-color:white;
+			color:#cc0000; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+	#jum{ background-color:red; 
+			color:white;} 
+	#but{   	text-align:center;
+                        width:250px;
+
+}
+#table{marlin-left:30%;} 
+	#butt{ text-align:center;} 		
+        #jum_bar{ text-align:center;
+background-color:#cccccc;}
+       
+#radio_group{margin-left:40%;}
+
+ #teknas{
+
+ text-align:center;
+ color:red;
+ border-color:red;
+     border-radius: 25px;
+ }
+</style>
+</head>
+
+<body id="bod">
+<div class="jumbotron" id="jum_bar">  <h2>set your details</h2> </div>
+<div class="container">
+
+  <h2></h2>
+<form role="form" id="theform" method="post" action="send.php">
+    <div class="form-group">
+<div class="jumbotron" id="jum">
+<h2>NAME</h2>
+      <label for="first"></label>
+      <input type="text" class="form-control" name="first" id="first" placeholder="first name" required>
+<label for="last"></label>
+      <input type="text" class="form-control" name="last" id="last" placeholder="last name" required> 
+ </div></div>
+	
+<div class="jumbotron" id="jum2">	
+    <div class="form-group">
+
+      <label for="dob"><h2>DOB</h2></label>
+      <input type="date" class="form-control" name="dob" id="dob" placeholder="DOB" required>
+</div></div>
+
+<div class="jumbotron" id="jum">	
+<div class="form-group">
+      <label for="email"><h2>EMAIL</h2></label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
+    </div></div>
+
+<div class="jumbotron" id="jum2">	
+<div class="form-group">
+      <label for="sex"><h2>SEX</h2></label>
+      <input type="text" class="form-control" name="sex" id="sex" placeholder="sex" required>
+</div></div>
+
+<div class="jumbotron" id="jum">	
+<div class="form-group">
+<h2>PLACE</h2>
+<label for="address"></label>
+      <input type="text" class="form-control" name="address" id="address" placeholder="address" required>
+      <label for="city"></label>
+      <input type="text" class="form-control" name="city" id="city" placeholder="city" required>
+    <label for="state"></label>
+      <input type="text" class="form-control" name="state" id="state" placeholder="state" required>
+    <label for="number"></label>
+      <input type="int" class="form-control" name="pincode" id="pincode" placeholder="pincode" required>
+
+	</div></div>
+	
+<div class="jumbotron" id="jum2">		
+<div class="form-group">
+<label for="phone">PHONE</label>
+<input type="phone" class="form_control" name="phone" id="phone" placeholder="phone no." required>
+</div></div>
+
+<div class="jumbotron" id="jum">	
+<div class="form-group" >
+
+  <label for="group"><h2>BLOOD GROUP</h2></label><br>
+<table id="table">
+<tbody>
+<div id="radio_group">
+<tr>
+<td><input          type="radio" name="group" value="Apos">A + </input></td>
+<td><input id="rad" type="radio" name="group" value="Aneg">A -  </input><br></td>
+</tr>
+<tr>
+<td><input          type="radio" name="group" value="Bpos">B +  </input></td>
+<td><input id="rad" type="radio" name="group" value="Bneg">B -  </input><br></td>
+</tr>
+<tr>
+<td><input          type="radio" name="group" value="ABpos">AB +</input></td>
+<td><input id="rad" type="radio" name="group" value="ABneg">AB -</input><br></td>
+</tr>
+<tr>
+<td><input          type="radio" name="group" value="Opos">O +  </input></td>
+<td><input id="rad" type="radio" name="group" value="Oneg">O -  </input><br></td>
+</tr>
+ </div>
+</tbody>
+</table>
+</div></div>
+
+
+<div class="jumbotron" id="jum2">		
+<div class="form-group">
+<label for="pass">Password</label>
+<input type="password" class="form_control" name="password" id="password" placeholder="password" required>
+</div></div>
+
+
+ <div id="butt"> 
+    <button id="but" type="submit" class="btn btn-primary"><h1>SET</h1></button>
+	</div>
+  </form>
+</div>
+</div>
+</div>
+<br><br><br>
+
+<div id="teknas">
+<p>teknas</p>
+</div>
+</body>
+</html>
